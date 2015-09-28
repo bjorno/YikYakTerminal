@@ -22,5 +22,6 @@ Could be utilized to identify other types of issues on campus.
 
 
 To do: 
+
 1. Actually write the CSV search script.
 2. Figure out how to Chron this so it runs automatically every half-hour. 
