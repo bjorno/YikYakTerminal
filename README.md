@@ -16,6 +16,7 @@ Yik Yak Command Line + YakMining + CSV File Keyword search = Easy Life
 
 YakMining adds a 'write to CSV' function to the Yik Yak Command Line. Then we can easily search the output file for key words such as "printer", "broken", "wifi", etc.
 
+Use the 'searchkeyword.py' script to search the CSV file for keywords. Edit the keywords as needed. 
 
 Could be utilized to identify other types of issues on campus. 
 
@@ -23,5 +24,4 @@ Could be utilized to identify other types of issues on campus.
 
 To do: 
 
-1. Actually write the CSV search script.
-2. Figure out how to Chron this so it runs automatically every half-hour. 
+1. Figure out how to Chron this so it runs automatically every half-hour. 
