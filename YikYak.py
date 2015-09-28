@@ -16,8 +16,8 @@ def main():
 	# Initialize Google Geocoder API
 	geocoder = pygeocoder.Geocoder("AIzaSyAGeW6l17ATMZiNTRExwvfa2iuPA1DvJqM")
 	
-	# We only care about Davidson College, no need for the entire CSV file schools
-	schools_list = ["Davidson College"]
+	# We only care about $SCHOOL_NAME, no need for the entire CSV file schools
+	schools_list = ["$SCHOOL_NAME"]
 	# the CSV file you should have downloaded
 	#with open('schools_list.csv','r') as school_file:
 	#	school_reader = csv.reader(school_file)
