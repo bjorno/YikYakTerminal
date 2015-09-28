@@ -26,4 +26,4 @@ Could be utilized to identify other types of issues on campus.
 
 To do: 
 
-1. Figure out how to Chron this so it runs automatically every half-hour. 
+1. Figure out how to Cron this so it runs automatically every half-hour. 
