@@ -3,22 +3,19 @@ Python implementation of Yik Yak using the pyak API by joseph346.
 Check out https://github.com/djtech42/YikYakTerminal for instructions. 
 
 ==============
-
 Yik Yak Command Line for College IT 
-
 ==============
 
 Are students using YikYak to voice their concerens about broken printers and slow Wi-Fi?
 Too underfunded to afford a full-time intern to browse YikYak?
 
-Look no further than here
+Presenting: YikYakIT
 
-Yik Yak Command Line + YakMining* + CSV File Keyword search = College IT Departments wet dream
+Yik Yak Command Line + YakMining + CSV File Keyword search = Easy Life
 
-YakMining (http://duckpond.wesleyan.edu/2015/04/04/yakmining-part/) adds a write to CSV function to 
-the Yik Yak Command Line. Then search the output file for key words such as "printer", "broken", "wifi" etc.
+YakMining (http://duckpond.wesleyan.edu/2015/04/04/yakmining-part/) adds a 'write to CSV' function to the Yik Yak Command Line. Then we can easily search the output file for key words such as "printer", "broken", "wifi", etc.
 
-Could potentially be applied to identify other types of issues. 
+Could potentially be applied to identify other types of issues on campus. 
 
 
 To do: 
