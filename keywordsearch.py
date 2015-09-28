@@ -15,6 +15,6 @@ with open('all_yaks.csv', 'rt') as f:
               if field == "Wifi":
                   print "Wifi is in file"
                   print row
-              if field == "Secure":
-                  print "Secure is in file"
+              if field == "Slow":
+                  print "Slow is in file"
                   print row
