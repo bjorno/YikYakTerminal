@@ -7,7 +7,7 @@ YakMining: http://duckpond.wesleyan.edu/2015/04/04/yakmining-part/
 Yik Yak Command Line for College IT 
 ==============
 
-Are students using YikYak to voice their concerens about broken printers and slow Wi-Fi?
+Are students using YikYak to voice their concerns about broken printers and slow Wi-Fi?
 Too underfunded to afford a full-time intern to browse YikYak?
 
 Presenting: YikYakIT
