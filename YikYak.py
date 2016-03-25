@@ -6,18 +6,18 @@ import csv
 
 #Added features from: http://duckpond.wesleyan.edu/2015/04/04/yakmining-part/
 #Original source: https://github.com/djtech42/YikYakTerminal
-#For anyone using this, you have to find a valid User ID yourself somewhere
-#The User ID included here is not working/banned
    
 def main():
 	# Title text
-	print("\nYik Yak Command Line Edition : Created by djtech42\n\n")
-	
+	print("\nYik Yak Command Line Edition : Created by djtech42\n")
+	print("Yakminer + Keyword search added by: bjorno\n\n")
+
+	# This could potentially break. If it breaks, check this and UserID
 	# Initialize Google Geocoder API
 	geocoder = pygeocoder.Geocoder("AIzaSyAGeW6l17ATMZiNTRExwvfa2iuPA1DvJqM")
 	
-	# We only care about $SCHOOL_NAME, no need for the entire CSV file schools
-	schools_list = ["$SCHOOL_NAME"]
+	# We only care about Davidson College, no need for the entire CSV file schools
+	schools_list = ["Davidson College"]
 	# the CSV file you should have downloaded
 	#with open('schools_list.csv','r') as school_file:
 	#	school_reader = csv.reader(school_file)
@@ -33,8 +33,16 @@ def main():
 		# Extract location coordinates and name from file
 		coords = fileinput.split('\n')
 		
-		currentlatitude = coords[0]
-		currentlongitude = coords[1]
+		#currentlatitude = coords[0]
+		#currentlongitude = coords[1]
+
+		#!!!TO CHANGE LOCATION, CHANGE COORDINATES BELOW!!!
+		#Location CSV file with GeoCoder broken as of Jan 2016 (Google Maps API change?)
+		#workaround is to hardcode lat/long 
+		
+		#Coords for Davidson College
+		currentlatitude = 35.500022
+		currentlongitude = -80.8474015
 		print("Location is set to: ", coords[2])
 		
 		# Set up coordinate object
@@ -96,19 +104,27 @@ def main():
 			print()
 			
 			# Show all action choices
-			choice = input("*Read Latest Yaks\t\t(R)\n*Write Yaks to CSV File\t\t(W)\n\n*Post Yak\t\t\t(P) or (P <message>)\n*Post Comment\t\t\t(C) or (C <yak#>)\n\n*Upvote Yak\t\t\t(U) or (U <yak#>)\n*Downvote Yak\t\t\t(D) or (D <yak#>)\n*Report Yak\t\t\t(E) or (E <yak#>)\n*Show Recent Yak Upvotes\t(A)\n\n*Upvote Comment\t\t\t(V) or (V <yak# comment#>)\n*Downvote Comment\t\t(H) or (H <yak# comment#>)\n*Report Comment\t\t\t(M) or (M <yak# comment#>)\n\n*Yakarma Level\t\t\t(Y)\n\n*Choose New User ID\t\t(I) or (I <userID>)\n*Choose New Location\t\t(L) or (L <location>)\n\n*Contact Yik Yak\t\t(F)\n\n*Quit App\t\t\t(Q)\n\n-> ")
+
+			#All Choices available in commented line. Removed most in production version as we do not need them all. Uncomment this line and comment the below 'choice =...' line to show all available options.
+			#choice = input("*Read Latest Yaks\t\t(R)\n*Write Yaks to CSV File\t\t(W)\n\n*Post Yak\t\t\t(P) or (P <message>)\n*Post Comment\t\t\t(C) or (C <yak#>)\n\n*Upvote Yak\t\t\t(U) or (U <yak#>)\n*Downvote Yak\t\t\t(D) or (D <yak#>)\n*Report Yak\t\t\t(E) or (E <yak#>)\n*Show Recent Yak Upvotes\t(A)\n\n*Upvote Comment\t\t\t(V) or (V <yak# comment#>)\n*Downvote Comment\t\t(H) or (H <yak# comment#>)\n*Report Comment\t\t\t(M) or (M <yak# comment#>)\n\n*Yakarma Level\t\t\t(Y)\n\n*Choose New User ID\t\t(I) or (I <userID>)\n*Choose New Location\t\t(L) or (L <location>)\n\n*Contact Yik Yak\t\t(F)\n\n*Quit App\t\t\t(Q)\n\n-> ")
 			
-			# Where the magic happens
+			choice = input("*Read Latest Yaks\t\t(R)\n*Write Yaks to CSV File\t\t(W)\n\n*Show Recent Yak Upvotes\t(A)\n\n*Yakarma Level\t\t\t(Y)\n\n*Choose New User ID\t\t(I) or (I <userID>)\n*Choose New Location\t\t(L) or (L <location>)\n\n*Quit App\t\t\t(Q)\n\n-> ")
+
+
+			# Where the magic happens. Writes 100 most recent Yaks to 'all_yaks.csv' file. 
+			#See link at the top of this file to Yakminer for implementation walkthrough //bjorno, Sept 2015.
 			if choice.upper() == 'W':
 				with open('all_yaks.csv', 'wt') as f:
-						for school in schools_list:
+						print(coords[2])
+
+						#for school in schools_list:
 						# update our location to the current school
-							coordlocation = changeLocation(geocoder, school)
-							remoteyakker.update_location(coordlocation)
-							for i in remoteyakker.get_yaks():
-								writer = csv.writer(f)
+							#coordlocation = changeLocation(geocoder, school)
+							#remoteyakker.update_location(coordlocation)
+						for i in remoteyakker.get_yaks():
+							writer = csv.writer(f)
                 				# write out whatever values you desire
-								writer.writerow([str(i.message), school,i.likes])
+							writer.writerow([str(i.message)])
 
 			# Read Yaks
 			if choice.upper() == 'R':
