@@ -41,5 +41,3 @@ Check out https://github.com/djtech42/YikYakTerminal for instructions on how to 
 
 See YakMining: http://duckpond.wesleyan.edu/2015/04/04/yakmining-part/ 
 for how "Write to CSV" function was implemented
-=======
-1. Figure out how to Cron this so it runs automatically every half-hour. 
