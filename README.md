@@ -3,7 +3,7 @@
 Yik Yak Command Line for College IT 
 ==============
 
-Are students using YikYak to voice their concerens about broken printers and slow Wi-Fi?
+Are students using YikYak to voice their concerns about broken printers and slow Wi-Fi?
 Too underfunded to afford a full-time intern to browse YikYak?
 
 Presenting: YikYakIT
@@ -21,6 +21,7 @@ Could be utilized to identify other types of issues on campus.
 
 
 To do: 
+
 
 1. Figure out how to Chron this so it runs automatically every half-hour. 
 
@@ -40,3 +41,5 @@ Check out https://github.com/djtech42/YikYakTerminal for instructions on how to 
 
 See YakMining: http://duckpond.wesleyan.edu/2015/04/04/yakmining-part/ 
 for how "Write to CSV" function was implemented
+=======
+1. Figure out how to Cron this so it runs automatically every half-hour. 
